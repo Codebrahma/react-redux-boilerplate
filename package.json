@@ -1,0 +1,20 @@
+{
+  "name": "rippling-webapp",
+  "version": "1.0.0",
+  "description": "Rippling WebApp",
+  "main": "",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node server.js",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rippling/rippling-webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rippling/rippling-webapp/issues"
+  },
+  "homepage": "https://github.com/Rippling/rippling-webapp#readme"
+}
