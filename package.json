@@ -6,6 +6,12 @@
   "scripts": {
     "test": "npm run test",
     "start": "node server.js",
+    "lint": "eslint ./lib ./client ./server --ext .js --ext .jsx",
+    "lint-fix": "npm run lint -- --fix"
+  },
+  "engines": {
+    "npm": ">=3",
+    "node": ">=4.4"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,20 @@
   "bugs": {
     "url": "https://github.com/Rippling/rippling-webapp/issues"
   },
-  "homepage": "https://github.com/Rippling/rippling-webapp#readme"
+  "homepage": "https://github.com/Rippling/rippling-webapp#readme",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "lodash": "^4.15.0",
+    "react": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
+    "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2"
+  }
 }
