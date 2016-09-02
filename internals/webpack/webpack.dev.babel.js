@@ -39,11 +39,11 @@ module.exports = require('./webpack.base.babel')({
 
   // Tell babel that we want to hot-reload
   babelQuery: {
-    presets: ['react-hmre'],
+    presets: ['react-hmre', 'stage-2', 'es2015', 'react'],
   },
 
   // Emit a source map for easier debugging
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
 });
 
 /**
@@ -56,20 +56,22 @@ module.exports = require('./webpack.base.babel')({
  *
  */
 function dependencyHandlers() {
+  return [];
   // Don't do anything during the DLL Build step
-  if (process.env.BUILDING_DLL) { return []; }
-
-  // If the package.json does not have a dllPlugin property, use the CommonsChunkPlugin
-  if (!dllPlugin) {
-    return [
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        children: true,
-        minChunks: 2,
-        async: true,
-      }),
-    ];
-  }
+  // if (process.env.BUILDING_DLL) { return []; }
+  //
+  // // If the package.json does not have a dllPlugin property, use the CommonsChunkPlugin
+  // if (!dllPlugin) {
+  //   return [
+  //     new webpack.optimize.CommonsChunkPlugin({
+  //       name: 'vendor',
+  //       children: true,
+  //       minChunks: 2,
+  //       async: true,
+  //     }),
+  //   ];
+  // }
+}
 
 /**
  * We dynamically generate the HTML content in development so that the different
