@@ -18,14 +18,19 @@ module.exports = (options) => ({
       exclude: /node_modules/,
       query: options.babelQuery,
     }, {
-      test: /\.(eot|svg|ttf|otf|woff|woff2)$/, // Load font-files which will be required by font-face
+      // Load font-files which will be required by font-face
+      test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
       loader: 'file-loader',
     }, {
       test: /\.(jpg|png|gif)$/,
       loaders: [
         'file-loader',
-        'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+        `image-webpack?{progressive:true, optimizationLevel: 7,
+        interlaced: false, pngquant:{quality: "65-90", speed: 4}}`,
       ],
+    }, {
+      test: /\.scss$/,
+      loader: 'style!css!sass',
     }, {
       test: /\.html$/,
       loader: 'html-loader',

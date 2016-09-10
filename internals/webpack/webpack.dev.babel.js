@@ -6,7 +6,6 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const logger = require('../../server/logger');
 const cheerio = require('cheerio');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
 const dllPlugin = pkg.dllPlugin;
@@ -25,6 +24,7 @@ module.exports = require('./webpack.base.babel')({
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
     'webpack-hot-middleware/client',
+    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     path.join(process.cwd(), 'app/app.js'), // Start with js/app.js
   ],
 
@@ -39,11 +39,11 @@ module.exports = require('./webpack.base.babel')({
 
   // Tell babel that we want to hot-reload
   babelQuery: {
-    presets: ['react-hmre', 'stage-2', 'es2015', 'react'],
+    presets: ['react-hmre'],
   },
 
   // Emit a source map for easier debugging
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
 });
 
 /**
@@ -85,6 +85,5 @@ function templateContent() {
   if (!dllPlugin) { return html; }
 
   const doc = cheerio(html);
-  const body = doc.find('body');
   return doc.toString();
 }

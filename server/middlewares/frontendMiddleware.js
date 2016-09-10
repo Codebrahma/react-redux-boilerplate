@@ -66,7 +66,6 @@ module.exports = (app, options) => {
     addProdMiddlewares(app, options);
   } else {
     const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
-    console.log(webpackConfig.module.loaders[0].query);
     addDevMiddlewares(app, webpackConfig);
   }
 
