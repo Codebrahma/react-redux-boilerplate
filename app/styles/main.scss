@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+@import './mixins';
+
+/**
+ * Generate font-faces for given fonts using mixin defined in mixins.scss
+ */
+// @include font-face(fontNormal, '../../public/assets/Fonts/FaktSoftPro-Normal', null, null, otf);
+
+body {
+  // font-family: fontNormal;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
