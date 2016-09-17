@@ -17,7 +17,7 @@ These are the technologies used:
 
 # Directory Structure to be followed in frontEnd
 
-`
+```
 app/
   modules/
     core/
@@ -47,9 +47,9 @@ app/
 public/                   - to store any assets such as icons, imgs, fonts etc.,
 internals/                - define configuration of webpack and others
 server/                   - server modules
-`
+```
 
 # NOTE
-*	Support hot reloading for React as well as Scss. For complete hot reload support for React              components, you may have to define components by React.Component class, because hot reload supports only for those. Components created in Stateless function style is not currently supported
+*	Support hot reloading for React as well as Scss. For complete hot reload support for React components, you may have to define components by React.Component class, because hot reload supports only for those. Components created in Stateless function style is not currently supported
 
-# No testing framework is added as of now, free feel to add a good one!
+No testing framework is added as of now, free feel to add a good one!
