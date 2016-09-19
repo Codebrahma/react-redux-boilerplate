@@ -5,7 +5,7 @@ A well constructed boilerplate for React-Redux applications.
 * Clone the repo
 * Run `npm install`
 * Execute `npm start` or `npm run app`
-* Application will be hosted on `http://localhost:3000/'
+* Application will be hosted on `http://localhost:3000/`
 
 # Platforms
 
@@ -50,6 +50,6 @@ server/                   - server modules
 ```
 
 # NOTE
-*	Support hot reloading for React as well as Scss. For complete hot reload support for React components, you may have to define components by React.Component class, because hot reload supports only for those. Components created in Stateless function style is not currently supported
+*	Supports hot reloading for React as well as Scss. For complete hot reload support for React components, you may have to define components by React.Component class, because hot reload supports only for those. Components created in Stateless function style is not currently supported
 
-No testing framework is added as of now, free feel to add a good one!
+_No testing framework is added as of now, free feel to add a good one!_
