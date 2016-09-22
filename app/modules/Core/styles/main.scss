@@ -1,0 +1,9 @@
+// Just to demostrate react-css-modules & autoprefixer-loader
+
+.container {
+  margin: 20px;
+  display: flex;
+  .inner-container {
+    padding: 40px;
+  }
+}

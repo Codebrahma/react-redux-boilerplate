@@ -9,6 +9,9 @@
 
 import React from 'react';
 import BaseComponent from './baseComponent';
+/** Modular css in react component */
+import cssmodules from 'react-css-modules';
+import styles from '../styles/main.scss';
 
 class App extends BaseComponent {
 
@@ -27,4 +30,4 @@ App.propTypes = {
   children: React.PropTypes.node,
 };
 
-export default App;
+export default cssmodules(App, styles);

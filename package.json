@@ -37,6 +37,7 @@
     "node-sass": "^3.9.0",
     "offline-plugin": "^3.4.2",
     "react": "15.3.0",
+    "react-css-modules": "^3.7.10",
     "react-dom": "15.3.0",
     "react-helmet": "3.1.0",
     "react-pure-render": "^1.0.2",
@@ -50,6 +51,7 @@
     "reselect": "2.5.3"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.11.4",
     "babel-core": "6.11.4",
     "babel-eslint": "6.1.2",
