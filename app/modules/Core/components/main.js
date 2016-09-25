@@ -8,9 +8,8 @@
  */
 
 import React from 'react';
-import BaseComponent from './baseComponent';
 
-class App extends BaseComponent {
+class App extends React.Component {
 
   render() {
     return (

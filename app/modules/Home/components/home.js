@@ -1,8 +1,7 @@
 
 import React from 'react';
-import BaseComponent from '../../Core/components/baseComponent';
 
-export default class HomePage extends BaseComponent {
+export default class HomePage extends React.Component {
   render() {
     return (
       <h1>
