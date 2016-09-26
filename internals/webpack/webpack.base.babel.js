@@ -30,7 +30,7 @@ module.exports = (options) => ({
       ],
     }, {
       test: /\.scss$/,
-      loader: 'style!css!sass',
+      loader: 'style!css!autoprefixer-loader!sass',
     }, {
       test: /\.html$/,
       loader: 'html-loader',
