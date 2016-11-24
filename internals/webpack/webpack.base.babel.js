@@ -14,7 +14,7 @@ module.exports = (options) => ({
   module: {
     loaders: [{
       test: /\.js$/, // Transform all .js files required somewhere with Babel
-      loader: 'babel',
+      loader: 'babel-loader',
       exclude: /node_modules/,
       query: options.babelQuery,
     }, {
@@ -25,12 +25,12 @@ module.exports = (options) => ({
       test: /\.(jpg|png|gif)$/,
       loaders: [
         'file-loader',
-        `image-webpack?{progressive:true, optimizationLevel: 7,
+        `image-webpack-loader?{progressive:true, optimizationLevel: 7,
         interlaced: false, pngquant:{quality: "65-90", speed: 4}}`,
       ],
     }, {
       test: /\.scss$/,
-      loader: 'style!css!autoprefixer-loader!sass',
+      loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader',
     }, {
       test: /\.html$/,
       loader: 'html-loader',
@@ -57,18 +57,19 @@ module.exports = (options) => ({
   resolve: {
     modules: ['app', 'node_modules'],
     extensions: [
-      '',
+      // '', // throwing error
       '.js',
       '.jsx',
       '.react.js',
     ],
-    packageMains: [
-      'jsnext:main',
-      'main',
-    ],
+    // throwing error
+    // packageMains: [
+    //   'jsnext:main',
+    //   'main',
+    // ],
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
   stats: false, // Don't show stats in the console
-  progress: true,
+  // progress: true,
 });
