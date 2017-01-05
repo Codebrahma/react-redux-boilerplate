@@ -26,6 +26,11 @@ import configureStore from './store';
 import './styles/main.scss';
 
 /**
+ * Loading normalize css to reset default and normalize CSS properties in different browsers
+ */
+require('normalize-css');
+
+/**
  * Needed for onTouchTap
  * http:stackoverflow.com/a/34015469/988941
  */
