@@ -20,7 +20,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:js": "npm run lint:eslint -- . ",
-    "lint:css": "stylelint ./app/*.scss ./app/**/**/.scss ./app/**/**/**/*.scss",
+    "lint:css": "stylelint './app/**/**/*.scss'",
     "lint:staged": "lint-staged"
   },
   "dependencies": {
