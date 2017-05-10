@@ -29,6 +29,9 @@ module.exports = (options) => ({
         interlaced: false, pngquant:{quality: "65-90", speed: 4}}`,
       ],
     }, {
+      test: /\.css$/,
+      loader: 'style!css!autoprefixer-loader',
+    }, {
       test: /\.scss$/,
       loader: 'style!css!autoprefixer-loader!sass',
     }, {
