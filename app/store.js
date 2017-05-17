@@ -4,23 +4,24 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
-import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
+// import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
 
 const devtools = window.devToolsExtension || (() => noop => noop);
 
-export default function configureStore(initialState = {}, history) {
+export default function configureStore(initialState = {}) {
   // Create the store with middlewares
-  // 1. routerMiddleware: Syncs the location/URL path to the state
 
   // Logger for redux actions and actioncreators on console
   const reduxLogger = createLogger({
     stateTransformer: state => JSON.parse(JSON.stringify(state)),
   });
 
+  // const sagaMiddleware = createSagaMiddleware();
+
   const middlewares = [
-    routerMiddleware(history),
+    // sagaMiddleware,
     reduxLogger,
   ];
 
@@ -46,6 +47,7 @@ export default function configureStore(initialState = {}, history) {
     });
   }
 
+  // sagaMiddleware.run(rootSaga);
   // Initialize it with no other reducers
   store.asyncReducers = {};
   return store;

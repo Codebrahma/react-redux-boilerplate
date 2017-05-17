@@ -3,29 +3,20 @@
  * Define Routes here
  */
 
-const errorLoading = (err) => {
-  console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
-};
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Home from './modules/Home/components/home';
 
-const loadModule = (cb) => (componentModule) => {
-  cb(null, componentModule.default);
-};
-
-export default function createRoutes() {
-  return [
-    {
-      path: '/home',
-      name: 'home',
-      getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('./modules/Home/components/home'),
-        ]);
-        const renderRoute = loadModule(cb);
-        importModules.then(([component]) => {
-          renderRoute(component);
-        });
-        importModules.catch(errorLoading);
-      },
-    },
-  ];
+/*
+ * A Route can have one of the three below
+ * a. Component - Only the first match renders
+ * b. render() - Only the first match renders
+ * c. Children - Always be rendered which are matching.
+ */
+export default class extends React.Component {
+  render() {
+    return (
+      <Route path="/home" component={Home} />
+    );
+  }
 }
