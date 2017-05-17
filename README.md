@@ -15,6 +15,13 @@ These are the technologies used:
 * SASS - styling
 * Node, Express - Server
 
+# Branch redux-saga has some additional libraries specific to redux.
+
+Checkout to this branch if you are going to use those. Mostly you won't be needing this.
+
+(redux-saga, recompose, react-router 4, redux-form redux logger)
+Also in this branch react-router-redux is disabled since it is not compatible with react-router 4.
+
 # Directory Structure to be followed in frontEnd
 
 ```
